@@ -1,0 +1,20 @@
+{
+  "name": "krypton-assistant",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js",
+    "register": "node src/register.js",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev src/server.js"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "wrangler": "^3.0.0"
+  },
+  "dependencies": {
+    "discord-interactions": "^3.4.0",
+    "itty-router": "^4.0.13"
+  }
+}
