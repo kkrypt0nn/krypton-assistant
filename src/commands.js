@@ -103,7 +103,7 @@ export const FAQ_RESPONSES = new Map([
 		{
 			author: 'Slash commands are not showing up?',
 			description:
-				'"If slash commands are not showing up upon the first start of the bot this is perfectly normal behavior. You will need to **synchronize** them. You can easily do so by sending the following message in the chat\n' +
+				'"If slash commands are not showing up upon the first start of the bot this is perfectly normal behavior. You will need to **synchronize** them. You can easily do so by sending the following message in a channel your bot can read messages in\n' +
 				'```\n' +
 				'@Bot sync <guild/global>\n' +
 				'```\n' +
@@ -199,7 +199,7 @@ export const FAQ_RESPONSES = new Map([
 		{
 			author: 'What permission(s) should I give to my bot(s)?',
 			description:
-				'Invite your bot **only** with the permissions **it needs** to work properly. Do not invite your bot with `BAN_MEMBERS` permission if your bot will never use them.\n\n' +
+				'Invite your bot **only** with the permissions **it needs** to work properly. Do not invite your bot with `BAN_MEMBERS` permission if your bot will never need that permission.\n\n' +
 				'__**DO NOT**__ invite **any** bot with the `ADMINISTRATOR` (`8`) permission, it is **never** needed and **no** bot requires it.',
 		},
 	],
