@@ -158,7 +158,7 @@ export const FAQ_RESPONSES = new Map([
 		'krypton_assistant_source_code',
 		{
 			author: "Can I get the source code of Krypton's Assistant bot?",
-			description: 'The source is private, if you need code snippets or want to know how the bot has been coded, ask Krypton for them.',
+			description: 'The source code is available [here](https://github.com/kkrypt0nn/krypton-assistant).',
 		},
 	],
 	[
@@ -254,7 +254,8 @@ export const FAQ_RESPONSES = new Map([
 				'**Create an issue first and __then__ a pull request**\n' +
 				'Start contributing by first opening a new issue on the respective project. Once that is done, you can create a pull request for the issue.\n\n' +
 				'**License**\n' +
-				'Your submissions are understood to be under the same license that covers the project - the license is available in the `LICENSE.md` file.',
+				'Your submissions are understood to be under the same license that covers the project - the license is available in the `LICENSE.md` file.\n\n\n' +
+				'> 💡 *Remember to always check the **`CONTRIBUTING.md`** file* of each project, as some points may be different or have some clarifications that are specific for the project.',
 		},
 	],
 ]);
