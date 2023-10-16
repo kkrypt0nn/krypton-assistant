@@ -216,7 +216,7 @@ export const FAQ_RESPONSES = new Map([
 		{
 			author: 'Why is X not in the Discord bot template?',
 			description:
-				'As the name suggests, it is a **template** - not a fully fleged Discord bot that anyone would be able to copy paste and publish a bot with it.\n\n' +
+				'As the name suggests, it is a **template** - not a fully fledged Discord bot that anyone would be able to copy paste and publish a bot with it.\n\n' +
 				"The idea behind the template is that newcomers can get their head around what's possible to be done with `discord.py`. It shows some core concepts such as hybrid commands, select menus, etc. so that **you** can code **your** bot **alone**. The template is here so that you can get a small reference on what can be done and how it can be done.\n\n" +
 				'> 💡 *If you believe a **core functionality** of `discord.py` is missing and not showcased in the template you are free to create an [issue](https://github.com/kkrypt0nn/Python-Discord-Bot-Template/issues/new/choose) or [discussion](https://github.com/kkrypt0nn/Python-Discord-Bot-Template/discussions/categories/ideas) that follows the [contributing guidelines](https://github.com/kkrypt0nn/Python-Discord-Bot-Template/blob/main/CONTRIBUTING.md).*',
 		},
