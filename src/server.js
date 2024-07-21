@@ -55,6 +55,10 @@ router.post('/', async (request, env) => {
 						},
 					});
 				}
+				const icon_url =
+					interaction.guild !== null
+						? `https://cdn.discordapp.com/icons/${interaction.guild.id}/${interaction.guild.icon}.png`
+						: `https://cdn.discordapp.com/avatars/${interaction.user.id}/${interaction.user.avatar}.png`;
 				return new JsonResponse({
 					type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
 					data: {
@@ -65,7 +69,7 @@ router.post('/', async (request, env) => {
 								description: response.description,
 								author: {
 									name: response.author,
-									icon_url: 'https://cdn.discordapp.com/icons/739934735387721768/7ee25c41de1e2e6b273100e7bc521fd4.png',
+									icon_url: icon_url,
 								},
 							},
 						],
