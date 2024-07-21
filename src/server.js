@@ -1,5 +1,5 @@
 import { InteractionResponseType, InteractionType, verifyKey } from 'discord-interactions';
-import { Router } from 'itty-router';
+import { AutoRouter } from 'itty-router';
 import { FAQ_COMMAND, FAQ_RESPONSES } from './commands.js';
 
 class JsonResponse extends Response {
@@ -14,7 +14,7 @@ class JsonResponse extends Response {
 	}
 }
 
-const router = Router();
+const router = AutoRouter();
 
 router.get('/', (request, env) => {
 	return new Response(`👋 from ${env.DISCORD_APPLICATION_ID}`);
@@ -41,6 +41,7 @@ router.post('/', async (request, env) => {
 					userId = interaction.data.options[1].value;
 				}
 				const response = FAQ_RESPONSES.get(faq);
+				console.log(response);
 				if (response === undefined) {
 					return new JsonResponse({
 						type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
@@ -55,10 +56,12 @@ router.post('/', async (request, env) => {
 						},
 					});
 				}
+
 				const icon_url =
 					interaction.guild !== null
-						? `https://cdn.discordapp.com/icons/${interaction.guild.id}/${interaction.guild.icon}.png`
+						? `https://cdn.discordapp.com/icons/739934735387721768/804b1c8060ca67b2e9f1f8348d2240ea.png`
 						: `https://cdn.discordapp.com/avatars/${interaction.user.id}/${interaction.user.avatar}.png`;
+
 				return new JsonResponse({
 					type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
 					data: {
@@ -91,7 +94,7 @@ async function verifyDiscordRequest(request, env) {
 	const signature = request.headers.get('x-signature-ed25519');
 	const timestamp = request.headers.get('x-signature-timestamp');
 	const body = await request.text();
-	const isValidRequest = signature && timestamp && verifyKey(body, signature, timestamp, env.DISCORD_PUBLIC_KEY);
+	const isValidRequest = signature && timestamp && (await verifyKey(body, signature, timestamp, env.DISCORD_PUBLIC_KEY));
 	if (!isValidRequest) {
 		return { isValid: false };
 	}
@@ -100,10 +103,8 @@ async function verifyDiscordRequest(request, env) {
 }
 
 const server = {
-	verifyDiscordRequest: verifyDiscordRequest,
-	fetch: async function (request, env) {
-		return router.handle(request, env);
-	},
+	verifyDiscordRequest,
+	fetch: router.fetch,
 };
 
 export default server;
