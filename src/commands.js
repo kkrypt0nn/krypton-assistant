@@ -21,6 +21,10 @@ export const FAQ_COMMAND = {
 					value: 'no_slash_commands',
 				},
 				{
+					name: 'no_module_named_audioop',
+					value: 'no_module_named_audioop',
+				},
+				{
 					name: 'twice_same_slash_command',
 					value: 'twice_same_slash_command',
 				},
