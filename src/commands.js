@@ -113,6 +113,14 @@ export const FAQ_RESPONSES = new Map([
 		},
 	],
 	[
+		'no_module_named_audioop',
+		{
+			author: "Getting a `No module named 'audioop'` error?",
+			description: "This is because as per Python 3.13, `audioop` has been removed from the standard library (see https://docs.python.org/3/whatsnew/3.13.html#whatsnew313-pep594).\n" +
+				'discord.py officially does not support Python 3.13, it is therefore recommended to **downgrade** your Python installation to **3.12** so that you do not face this issue or eventually other issues later on while coding your bot.',
+		},
+	],
+	[
 		'twice_same_slash_command',
 		{
 			author: 'Seeing twice the same slash command?',
